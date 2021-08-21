@@ -1,0 +1,21 @@
+import time
+
+from selenium import webdriver
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get("http://practice.automationtesting.in/")
+driver.execute_script("window.scrollBy(0,600);")
+selenium_ruby = driver.find_element_by_css_selector('.post-160>a>h3')
+selenium_ruby.click()
+reviews_btn = driver.find_element_by_css_selector('[href="#tab-reviews"]')
+reviews_btn.click()
+rating_five = driver.find_element_by_class_name('star-5')
+rating_five.click()
+text_review = driver.find_element_by_id('comment')
+text_review.send_keys('Nice book!')
+text_name = driver.find_element_by_id('author')
+text_name.send_keys('Mariia')
+text_email = driver.find_element_by_id('email')
+text_email.send_keys('zhiga@mail.ru')
+submit_btn = driver.find_element_by_id('submit')
+driver.quit()
